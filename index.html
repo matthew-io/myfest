@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/688f057db1.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <title>Document</title>
+</head>
+    <body onload="onPageLoad()">
+    <main>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand logo my-2" href="#">MyFest</a>
+                <a class="logout" id="logout" onclick="logout()">
+                    <i class="logoutIcon fa-solid fa-arrow-right-from-bracket"></i>
+                </a>
+            </div>
+              <div class="collapse navbar-collapse" id="navbarColor03">
+              </div>
+            </div>
+          </nav>
+          <div id="container" class="row container container-fluid mx-auto mt-4">
+            <div class="col-lg mb-4 text-center">
+                <img src="./img/screenshot.png" alt="Screenshot of web application" class="img-fluid col-md-auto" id="screenshotImg"> 
+            </div>
+            <div class="col-md my-auto">
+                <div class="info my-auto text-center mx-auto">
+                    <h1>MYFEST</h1>
+                    <p>MyFest is a web application that utilizes the Spotify API to create a festival lineup from your most listened to artists. A concert tickets API is also utilized, displaying a list of actual concerts involving your most listened to artists<hr> Sign in below to get started.</p>
+                    <button type="button" id="login" class="btn btn-dark" onclick="requestAuthorization()">Login with Spotify&nbsp;<img src='https://cdn-icons-png.flaticon.com/512/3669/3669986.png' class="spotifyLogo pl-2" alt="Spotify logo icon"></button>
+                </div>
+            </div>
+          </div>
+          <div class="row container container-fluid mx-auto">
+            <div id="festContainer" class="mw-100 col-md-auto mb-4 mt-4 p-2 container-fluid text-center">
+                <h1 class="text-white pt-4">MYFEST</h1>
+                <div id="dayOne" class="day w-75 mx-auto mt-4">
+                </div>
+                <div id="dayTwo" class="day w-75 mx-auto mt-4">
+                </div>
+                <div id="dayThree" class="day w-75 mx-auto mt-4">
+                </div>
+            </div>
+            <div id="para" class="col-lg my-auto">
+                <div id="topArtists" class="my-auto text-center w-100 mx-auto">
+                    <h1>YOUR TOP ARTISTS</h1>
+                    <div class="card border-primary mb-3">
+                        <div class="card-body row">
+                          <img class="col my-auto" style="height:50px" src="https://i.scdn.co/image/ab6761610000e5eba03696716c9ee605006047fd" alt="logout icon">
+                          <h4 class="card-title col my-auto">DRAKE</h4>
+                          <h4 class="card-title col my-auto">DRAKE</h4>
+                      </div>
+                </div>
+            </div>
+            </div>
+          </div>
+    </main>
+</body>
+<script src="./js/main.js"></script>
+</html>
