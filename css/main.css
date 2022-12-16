@@ -4,7 +4,7 @@
     display: none;
     background-color:cadetblue;
     width: 525px;
-    height: 650px;
+    height: 700px;
     background-image: url('../img/cityscape.svg');
     background-repeat: no-repeat;
     background-size: cover;
@@ -23,6 +23,7 @@ span {
     font-size: 15px;
     color: white;
 }
+
 
 .grid {
     display: grid;  
