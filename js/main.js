@@ -1,4 +1,4 @@
-var redirect_uri = "http://127.0.0.1:5500/index.html";
+var redirect_uri = "https://matthew-io.github.io/group-9-web-project/";
  
 
 var client_id = "04250bc227ae411c9daba9cc95c4d407"; 
@@ -132,7 +132,6 @@ function callAuthorizationApi(body){
 function handleAuthorizationResponse(){
     if ( this.status == 200 ){
         var data = JSON.parse(this.responseText);
-        console.log(data);
         var data = JSON.parse(this.responseText);
         if ( data.access_token != undefined ){
             access_token = data.access_token;
@@ -145,7 +144,6 @@ function handleAuthorizationResponse(){
         onPageLoad();
     }
     else {
-        console.log(this.responseText);
         alert(this.responseText);
     }
 }
@@ -191,7 +189,6 @@ function displaySimilar(data) {
 function handleApiResponse() {
     if ( this.status == 200 ) {
         var data = JSON.parse(this.responseText);
-        console.log(data);
     }
 }
 
