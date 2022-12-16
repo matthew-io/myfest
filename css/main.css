@@ -4,7 +4,7 @@
     display: none;
     background-color:cadetblue;
     width: 525px;
-    height: 650px;
+    height: 700px;
     background-image: url('../img/cityscape.svg');
     background-repeat: no-repeat;
     background-size: cover;
@@ -13,10 +13,6 @@
 
 * {
     font-family: 'Fjalla One', sans-serif;
-}
-
-h1 {
-    color: white;
 }
 
 span {
@@ -38,10 +34,9 @@ span {
 }
 
 .navbar-header {
-    float: left;
     text-align: center;
     width: 100%;
-    margin-left: 60px;
+    margin-left: 25px;
 }
 
 .logout {

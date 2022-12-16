@@ -24,10 +24,10 @@
               </div>
             </div>
           </nav>
-          <div id="container" class="row container container-fluid mx-auto mt-4">
-            <div class="col-lg mb-4 text-center">
+          <div id="container" class="row container container-fluid mx-auto mt-4 w-50">
+            <!-- <div class="col-lg mb-4 text-center">
                 <img src="./img/screenshot.png" alt="Screenshot of web application" class="img-fluid col-md-auto" id="screenshotImg"> 
-            </div>
+            </div> -->
             <div class="col-md my-auto">
                 <div class="info my-auto text-center mx-auto">
                     <h1>MYFEST</h1>
@@ -37,8 +37,11 @@
             </div>
           </div>
           <div class="row container container-fluid mx-auto">
+            <div>
+            </div>
             <div id="festContainer" class="mw-100 col-md-auto mb-4 mt-4 p-2 container-fluid text-center">
-                <h1 class="text-white pt-4">MYFEST</h1>
+            <p class="mb-2 text-white">↓ CLICK ON ACTS TO MOVE THEM AROUND ↓</p>
+                <h1 class="text-white pt-4" contenteditable="true">MYFEST</h1>
                 <div id="dayOne" class="day w-75 mx-auto mt-4">
                 </div>
                 <div id="dayTwo" class="day w-75 mx-auto mt-4">
@@ -47,18 +50,18 @@
                 </div>
             </div>
             <div id="para" class="col-lg my-auto">
-                <div id="topArtists" class="my-auto text-center w-100 mx-auto">
-                    <h1>YOUR TOP ARTISTS</h1>
-                    <div class="card border-primary mb-3">
-                        <div class="card-body row">
-                          <img class="col my-auto" style="height:50px" src="https://i.scdn.co/image/ab6761610000e5eba03696716c9ee605006047fd" alt="logout icon">
-                          <h4 class="card-title col my-auto">DRAKE</h4>
-                          <h4 class="card-title col my-auto">DRAKE</h4>
-                      </div>
+                <div id="topArtists" class="my-auto w-100 mx-auto">
+                    <h1 class="text-center">YOUR TOP 5 ARTISTS</h1>
                 </div>
             </div>
             </div>
           </div>
+          <section id="similar">
+            <div>
+                <h1 class="text-center mt-4">YOU MAY ALSO LIKE</h1>
+                <p class="text-center">Suggestions based on your top 5 artists</p>
+            </div>
+          </section>
     </main>
 </body>
 <script src="./js/main.js"></script>
