@@ -24,10 +24,6 @@ span {
     color: white;
 }
 
-#screenshotImg {
-    /* height: 500px; */
-}
-
 .grid {
     display: grid;  
     grid-auto-flow: column;
