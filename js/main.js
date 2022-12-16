@@ -4,21 +4,23 @@ var redirect_uri = "https://matthew-io.github.io/group-9-web-project/";
 var client_id = "04250bc227ae411c9daba9cc95c4d407"; 
 var client_secret = "5e7886f1e7084a26aa3e63ea8c0e915e"; 
 
-// In a real world app I know you wouldn't show API keys like this, but just for ease I've left 
-// them in here
+// In a real world app I obviously wouldn't just have the client id and client secret showing like this
+// but just for ease I have them here.
 
 var access_token = null;
 var refresh_token = null;
-var currentPlaylist = "";
-var radioButtons = [];
 
 const AUTHORIZE = "https://accounts.spotify.com/authorize"
 const TOKEN = "https://accounts.spotify.com/api/token";
+
+// Logout function which removes access token from local storage and refreshes the page
 
 function logout() {
     localStorage.removeItem('access_token')
     location.reload();
 }
+
+// Function that runs every time the app is visited, checks if access token is already in local storage and displays/hides certain elements and runs certain functions in either case.
 
 function onPageLoad(){
     client_id = client_id
@@ -43,11 +45,15 @@ function onPageLoad(){
     }
 }
 
+// Handles the redirect from the spotify auth process
+
 function handleRedirect(){
     let code = getCode();
     fetchAccessToken( code );
     window.history.pushState("", "", redirect_uri);
 }
+
+// Retrieves the auth token after user logs in
 
 function getCode(){
     let code = null;
@@ -58,6 +64,8 @@ function getCode(){
     }
     return code;
 }
+
+// Method for swapping artists around on the festival poster
 
 let count = 0, toSwap, hold;
 
@@ -89,6 +97,8 @@ function swapArtist(el) {
     }
 
 }
+
+// Method which requests spotify auth token with scope and user details specified.
 
 function requestAuthorization(){
     localStorage.setItem("client_id", client_id);
@@ -148,15 +158,22 @@ function handleAuthorizationResponse(){
     }
 }
 
+// Method which fetches info regarding the users top artists using ths spotify API
+
 function getTopArtists() {
     callApi("GET", 'https://api.spotify.com/v1/me/top/artists?limit=35', null, handleArtistsReponse);    
 }
+
+// Method which fetches info regarding similar artists to those in the users top 5, uses the
+// tastedrive similarity API.
 
 function getSimilarArtists(artist) {
     fetch(`https://tastedive.com/api/similar?info=1&q=${artist}&k=445716-MyFest-X8G4LRTR`)
         .then((response) => response.json())
         .then((data) => displaySimilar(data));
 }
+
+// Method which displays the similar artists.
 
 function displaySimilar(data) {
     if (data.Similar.Results.length == 0) {
@@ -198,6 +215,8 @@ function handleArtistsReponse() {
         displayArtists(data);
     }
 }
+
+// Method which displays artists when auth token is received from the Spotify API.
 
 function displayArtists(data) {
 
@@ -299,6 +318,8 @@ function displayArtists(data) {
         days[i].append(acts);
     }
 }
+
+// 
 
 function callApi(method, url, body, callback){
     let xhr = new XMLHttpRequest();
